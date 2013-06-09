@@ -14,11 +14,11 @@ namespace GTDemo
 {
     public class CStart : CoreObject
     {
-        public CStart(Level l)
+        public CStart(Level l, Vector2 position)
             : base(l)
         {
             Name = "Start";
-            Sprite.Position = new Vector2(150, 75);
+            Sprite.Position = position;
         }
     }
 }

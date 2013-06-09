@@ -16,13 +16,13 @@ namespace GTDemo
     {
         bool closed;
 
-        public CSwitch(Level l)
+        public CSwitch(Level l, Vector2 position)
             : base(l)
         {
             TrickText = "Throw";
 
             throwSwitch(false);
-            Sprite.Position = new Vector2(500, 150);
+            Sprite.Position = position;
         }
 
         public override void Trick()

@@ -1,0 +1,18 @@
+﻿{
+  'CoreObjects': [
+    { 'ClassName': 'CStart',
+	  'PositionX': 150,
+	  'PositionY': 75 
+	},
+	{ 'ClassName': 'CSwitch',
+	  'PositionX': 500,
+	  'PositionY': 150 
+	},
+	{ 'ClassName': 'CPlatform',
+	  'LeftBound': 200,
+	  'RightBound': 550,
+	  'TopBound': 100,
+	  'BottomBound': 400,
+	}
+  ]
+}

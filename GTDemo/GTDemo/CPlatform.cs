@@ -22,20 +22,25 @@ namespace GTDemo
 
     public class CPlatform : CoreObject
     {
-        int LEFT_BOUND = 200;
-        int RIGHT_BOUND = 550;
-        int TOP_BOUND = 100;
-        int BOTTOM_BOUND = 400;
+        int leftBound;
+        int rightBound;
+        int topBound;
+        int bottomBound;
         bool axisX = true;
         CPlatformDirection direction = CPlatformDirection.Right;
 
-        public CPlatform(Level l)
+        public CPlatform(Level l, int lb, int rb, int tb, int bb)
             : base(l)
         {
             Name = "Hover Platform";
             TrickText = "";
 
-            Sprite.Position = new Vector2(LEFT_BOUND, TOP_BOUND);
+            leftBound = lb;
+            rightBound = rb;
+            topBound = tb;
+            bottomBound = bb;
+
+            Sprite.Position = new Vector2(leftBound, topBound);
         }
 
         public void SwitchDirection()
@@ -51,16 +56,16 @@ namespace GTDemo
         {
             if (axisX)
             {
-                if (Sprite.Position.X <= LEFT_BOUND)
+                if (Sprite.Position.X <= leftBound)
                     direction = CPlatformDirection.Right;
-                if (Sprite.Position.X >= RIGHT_BOUND)
+                if (Sprite.Position.X >= rightBound)
                     direction = CPlatformDirection.Left;
             }
             else
             {
-                if (Sprite.Position.Y <= TOP_BOUND)
+                if (Sprite.Position.Y <= topBound)
                     direction = CPlatformDirection.Down;
-                if (Sprite.Position.Y >= BOTTOM_BOUND)
+                if (Sprite.Position.Y >= bottomBound)
                     direction = CPlatformDirection.Up;
             }
 
