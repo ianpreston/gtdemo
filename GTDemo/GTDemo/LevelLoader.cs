@@ -20,7 +20,7 @@ namespace GTDemo
         public List<CoreObject> LoadLevel(string filename)
         {
             string json = null;
-            using (var sr = new StreamReader("Levels/level0.json"))
+            using (var sr = new StreamReader(filename))
                 json = sr.ReadToEnd();
 
             List<CoreObject> coreObjects = new List<CoreObject>();

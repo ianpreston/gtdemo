@@ -45,7 +45,7 @@ namespace GTDemo
             livingButton = new Button(this, "ButtonGhost1", SwitchToLiving, new Vector2(130, 450));
             trickButton = new Button(this, "ButtonTrick", player.Trick, new Vector2(670, 450));
 
-            coreObjects = (new LevelLoader(this)).LoadLevel("level0.json");
+            coreObjects = (new LevelLoader(this)).LoadLevel("Levels/level0.json");
 
             player.Possessed = coreObjects.First<CoreObject>();
         }
