@@ -14,12 +14,12 @@ namespace GTDemo
 {
     class Player : GameObject
     {
-        protected const int RANGE = 180;
+        const int RANGE = 180;
 
         bool jumping = false;
 
-        protected Texture2D line;
-        protected SpriteFont spriteFont;
+        Texture2D line;
+        SpriteFont spriteFont;
 
         public CoreObject Possessed;
 
