@@ -121,6 +121,7 @@
     <Compile Include="GameState.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="LevelLoader.cs" />
+    <Compile Include="Lightning.cs" />
     <Compile Include="MainMenuState.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayState.cs" />

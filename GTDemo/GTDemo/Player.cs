@@ -20,6 +20,7 @@ namespace GTDemo
 
         Texture2D line;
         SpriteFont spriteFont;
+        Lightning lightning;
 
         public CoreObject Possessed;
 
@@ -45,6 +46,8 @@ namespace GTDemo
 
             line = new Texture2D(graphicsDevice, 1, 1, false, SurfaceFormat.Color);
             line.SetData<Int32>(new Int32[] { 0xFFFFFF }, 0, line.Width * line.Height);
+
+            lightning = new Lightning(line, 3);
         }
 
         public override void Update(GameTime gameTime)
@@ -117,19 +120,12 @@ namespace GTDemo
                 Vector2 mouse = level.State.GameCamera.TransformRealPosition(new Vector2(Mouse.GetState().X, Mouse.GetState().Y));
                 Vector2 sissel = Sprite.Position;
 
-                DrawJumpLightning(spriteBatch, sissel, mouse);
+                lightning.DrawLightning(spriteBatch, sissel, mouse, RANGE);
             }
 
             string hudText = Possessed.Name + "\n" + Possessed.TrickText;
             spriteBatch.DrawString(spriteFont, hudText, level.State.GameCamera.TransformRealPosition(Vector2.Zero), Color.White, 0, Vector2.Zero, 1f, SpriteEffects.None, 0f);
         }
 
-        protected void DrawJumpLightning(SpriteBatch spriteBatch, Vector2 sissel, Vector2 mouse)
-        {
-            float angle = (float)Math.Atan2(sissel.Y - mouse.Y, sissel.X - mouse.X);
-            float distance = (float)Math.Sqrt(Math.Pow(sissel.X - mouse.X, 2) + Math.Pow(sissel.Y - mouse.Y, 2));
-
-            spriteBatch.Draw(line, new Rectangle((int)sissel.X, (int)sissel.Y, (int)Math.Min(RANGE, distance), 1), null, Color.White, angle, new Vector2(1, 1), SpriteEffects.None, 0f);
-        }
     }
 }
